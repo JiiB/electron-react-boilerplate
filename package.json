@@ -1,0 +1,72 @@
+{
+  "name": "electron-react-boilerplate",
+  "version": "1.0.0",
+  "productName": "Electron App",
+  "author": {
+    "name": "Nino Zumstein",
+    "email": "nino.zumstein@gmail.com",
+    "url": "https://twitter.com/JiiB17 "
+  },
+  "private": false,
+  "homepage": "./",
+  "license": "MIT",
+  "main": "public/electron.js",
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "build:win": "yarn react-build && electron-builder build --win --x64",
+    "build:mac": "yarn react-build && electron-builder build --mac --x64",
+    "dev": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.7",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "concurrently": "^5.0.0",
+    "cross-env": "^6.0.3",
+    "electron": "^7.1.1",
+    "electron-builder": "^22.1.0",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-is-dev": "^1.1.0",
+    "prettier": "^1.19.1",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^11.1.1",
+    "typescript": "^3.7.2",
+    "wait-on": "^3.3.0"
+  },
+  "build": {
+    "appId": "com.jiib.electron-react-app",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      "last 3 chrome version"
+    ],
+    "development": [
+      "last 3 chrome version"
+    ]
+  }
+}
