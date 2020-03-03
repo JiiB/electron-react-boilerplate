@@ -1,5 +1,5 @@
 const electron = require('electron');
-const { app, ipcMain, BrowserWindow } = electron;
+const { app, BrowserWindow } = electron;
 
 const packageJson = require('../package.json');
 
@@ -7,6 +7,7 @@ const path = require('path');
 
 const isDev = require('electron-is-dev');
 
+// TODO: use this when building for production
 // const isDev = false;
 
 const isMac = process.platform === 'darwin';
