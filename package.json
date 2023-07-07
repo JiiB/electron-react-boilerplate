@@ -45,7 +45,7 @@
     "electron-is-dev": "^1.1.0",
     "prettier": "^1.19.1",
     "prettier-stylelint": "^0.4.2",
-    "stylelint": "^13.2.0",
+    "stylelint": "^15.10.1",
     "typescript": "^3.7.2",
     "wait-on": "^4.0.1"
   },
